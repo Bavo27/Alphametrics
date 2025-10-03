@@ -260,7 +260,7 @@ class BST:
     def insert(self, newValue):
         """Given a new value, add a node to the tree somewhere to add the new value. This performs the typical BST insertion algorithm."""
         if self.isEmpty():
-            self.setNodeValue(newValue)
+            self.newNode = newValue
         elif self.nodeValue >= newValue:
             if self.hasLeftChild:
                 self.leftChild.insert(newValue)
