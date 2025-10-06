@@ -3,7 +3,6 @@ from collections import deque
 import heapq
 
 def guessTheDataStructure():
-    answerList = []
     for line in sys.stdin: # to loop over the inputs repeatedly
         numTimes = int(line.strip()) # read in number of lines
         stack = []
@@ -32,14 +31,14 @@ def guessTheDataStructure():
                         isPriority = False
             
         if isStack == False and isQueue == False and isPriority == False:
-            answerList.append("impossible")
+            print("impossible")
         elif isStack == True and (isQueue == False and isPriority == False):
-            answerList.append("stack")
+            print("stack")
         elif isQueue == True and (isStack == False and isPriority == False):
-            answerList.append("queue")
+            print("queue")
         elif isPriority == True and (isStack == False and isQueue == False):
-            answerList.append("priority queue")
+            print("priority queue")
         else:
-            answerList.append("not sure")
-    for response in answerList:
-        print(response)
+            print("not sure")
+
+guessTheDataStructure()
